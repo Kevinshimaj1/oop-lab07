@@ -1,5 +1,6 @@
 package it.unibo.inner;
 
+import it.unibo.inner.api.GenericIterableWithPolicy;
 import it.unibo.inner.api.IterableWithPolicy;
 import it.unibo.inner.api.Predicate;
 import it.unibo.inner.test.api.Product;
@@ -15,11 +16,11 @@ public class TestIterableWithPolicy {
     private TestIterableWithPolicy() {}
 
     private static <T> IterableWithPolicy<T> getIterableWithPolicy(T[] elements, Predicate<T> filter) {
-        return null; // TODO: return the implementation of IterableWithPolicy
+        return new GenericIterableWithPolicy<>(elements,filter); // TODO: return the implementation of IterableWithPolicy
     }
 
     private static <T> IterableWithPolicy<T> getIterableWithPolicy(T[] elements) {
-        return null; // TODO: return the implementation of IterableWithPolicy
+        return new GenericIterableWithPolicy<>(elements); // TODO: return the implementation of IterableWithPolicy
     }
 
     public static void main(String[] args) {
